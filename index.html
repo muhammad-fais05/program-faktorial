@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Faktorial dengan JavaScript</title>
+</head>
+<body>
+    <h1>Hitung Faktorial</h1>
+
+    <!-- Input untuk memasukkan angka -->
+    <label for="numInput">Masukkan angka: </label>
+    <input type="number" id="numInput" placeholder="Contoh: 5" min="0" />
+    <button onclick="hitungFaktorial()">Hitung Faktorial</button>
+
+    <!-- Tempat untuk menampilkan hasil -->
+    <p id="hasil"></p>
+
+    <script>
+        // Fungsi untuk menghitung faktorial
+        function hitungFaktorial() {
+            // Ambil nilai input dari pengguna
+            let num = document.getElementById("numInput").value;
+
+            // Pastikan input adalah angka dan lebih besar atau sama dengan 0
+            if (num === "" || num < 0) {
+                // Kondisi jika input kosong atau angka negatif
+                document.getElementById("hasil").innerText = "Masukkan angka non-negatif!";
+            } else {
+                num = parseInt(num);  // Konversi input menjadi integer
+                let faktorial = 1;
+
+                // Perulangan untuk menghitung faktorial menggunakan loop for
+                for (let i = 1; i <= num; i++) {
+                    faktorial *= i;  // Faktorial = faktorial * i
+                }
+
+                // Menampilkan hasil perhitungan
+                document.getElementById("hasil").innerText = "Faktorial dari " + num + " adalah: " + faktorial;
+            }
+        }
+    </script>
+</body>
+</html>
